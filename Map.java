@@ -26,20 +26,13 @@ class Map
             char ch=ob.max(x+1,x-1,y+1,y-1,map,map[x][y]);
             map[x][y]=0;
             switch (ch) {
-                case 'r':
-                    ob.river(x, y+1, map);
+                case 'r' -> ob.river(x, y+1, map);
+                case 'l' -> ob.river(x, y-1, map);
+                case 'b' -> ob.river(x+1, y, map);
+                case 't' -> ob.river(x-1, y, map);
+                default -> {
                     break;
-                case 'l':
-                    ob.river(x, y-1, map);
-                    break;
-                case 'b':
-                    ob.river(x+1, y, map);
-                    break;
-                case 't':
-                    ob.river(x-1, y, map);
-                    break;
-                default:
-                    break;
+                }
             }
         }
     }
